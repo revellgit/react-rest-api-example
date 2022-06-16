@@ -40,7 +40,14 @@ const limit = rateLimit({
 app.use(urlencoded({ extended: false }));
 app.use(json());
 
-app.use(cors());
+// CORS options
+const corsOpts = {
+  origin: origin: ['*', 'https://id607001-revemw1-react.herokuapp.com/'],
+  methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
+}
+
+app.use(cors(corsOpts));
 
 app.use(cookieParser(process.env.JWT_SECRET));
 
