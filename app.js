@@ -42,8 +42,7 @@ app.use(json());
 
 // CORS options
 const corsOpts = {
-  origin: 'https://id607001-revemw1-react.herokuapp.com',
-  vary: origin,
+  origin: 'https://id607001-revemw1-react.herokuapp.com',  
   methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
 }
