@@ -44,20 +44,12 @@ app.use(json());
 // origin: 'https://id607001-revemw1-react.herokuapp.com', 
 // localhost
 
-const corsOpts =
-	PORT === 3000
-	? {
-  origin: 'https://localhost:3000',  
-  methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-  allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
-}
-: {
+const corsOpts = 
+{
   origin: 'https://id607001-revemw1-react.herokuapp.com',  
   methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
 }
-
-console.log(corsOpts)
 
 app.use(cors(corsOpts));
 
