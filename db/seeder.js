@@ -12,7 +12,7 @@ import conn from "./connection.js";
 
 dotenv.config();
 
-conn(process.env.MONGO_URI);
+conn(process.env.MONGO_URI_DEV);
 
 const createResources = async (model, data, type) => {
   try {

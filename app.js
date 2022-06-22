@@ -42,16 +42,26 @@ app.use(json());
 
 // CORS options
 // origin: 'https://id607001-revemw1-react.herokuapp.com', 
-// localhost
+// origin: 'http://localhost:3001',
 
-const corsOpts = 
-{
-  origin: 'https://id607001-revemw1-react.herokuapp.com',  
-  methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-  allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
-}
+const corsOpts =
+	PORT === 3000
+	?
+	{
+	  origin: 'http://localhost:3001',
+	  methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+	  allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
+	}
+	:
+	{
+	  origin: 'https://id607001-revemw1-react.herokuapp.com',
+	  methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+	  allowedHeaders: 'Origin, Content-Type, X-Auth-Token, Authorization',
+	};
 
 app.use(cors(corsOpts));
+
+console.log(corsOpts)
 
 app.use(cookieParser(process.env.JWT_SECRET));
 
