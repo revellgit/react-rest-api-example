@@ -33,7 +33,7 @@ const DB =
 
 const limit = rateLimit({
   windowMs: 10 * 60 * 1000,
-  max: 25,
+  max: 50,
   message: "You have exceeded the number of request per minute: 25",
 });
 

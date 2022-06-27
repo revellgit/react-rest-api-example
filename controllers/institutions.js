@@ -27,7 +27,7 @@ const getInstitution = async (req, res) => {
 
 const getInstitutions = async (req, res) => {
   const {
-    limit = 10,
+    limit = 20,
     page = 1,
     name,
     region,
